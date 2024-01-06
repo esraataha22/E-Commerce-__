@@ -1,0 +1,19 @@
+label{
+    font-size: 18px; 
+    font-weight:bold; 
+    color: rgb(109, 17, 17);
+}
+
+input{
+    border: 1px solid brown ;
+    background-color: beige;
+} 
+ 
+/* input:invalid{
+    border: 1px solid brown ;
+    background-color: beige;
+}  */
+
+/* input:valid{
+    border: 1px solid green;
+}  */

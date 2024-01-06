@@ -1,0 +1,38 @@
+<div class="container-fluid">
+<a class="btn btn-dark" (click)="clearCart()"> <b>Clear cart</b></a> &nbsp;
+<br>
+<br>
+      <table class="table table-bordered" *ngIf="items.length" id="sum_table" style="border: 2px solid  rgb(43, 4, 105); box-shadow:3px 3px 6px rgb(43, 4, 105) ;">
+        <thead style="background-color: rgb(202, 204, 212)">
+         <tr class="table-primary" class="titlerow">
+            <td><h5>#</h5></td>
+            <td><h5>Item</h5></td>
+            <td><h5>Title</h5></td>
+            <td><h5>Price</h5></td>
+            <td><h5>Description</h5></td>
+            <td><h5>category</h5></td>
+            <td><h5>Quantity</h5></td>
+            <td><h5></h5></td>
+        </tr>
+      </thead>
+     <tbody>
+        <tr *ngFor="let item of items let i=index;">
+            <td class="netSn">{{i+1}}</td>
+            <td><img [src]="item.image" class="img-fluid rounded-start" alt="..." width="100px;" height="100px;" style="border: 1px solid rgb(21, 21, 54);"></td>
+            <td>{{ item.title }}</td>
+            <td class="netQt">{{ item.price }}</td>
+            <td class="netQt">{{ item.description }}</td>
+            <td class="netSum">{{ item.category }}</td>
+            <td class="netSum">{{quantity}}</td>
+            <td><a class="btn btn-primary" (click)="deletefromCart(item)"> 
+              <b>Delete</b></a> &nbsp;
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+      <h4 style="color: brown;"> Total Price : {{total}}</h4>
+
+ </div>
+  

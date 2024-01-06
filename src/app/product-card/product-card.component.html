@@ -1,0 +1,15 @@
+<div class="card h-100" style="background-color: rgb(202, 204, 212);
+border: 2px solid rgb(21, 21, 54); box-shadow: 3px 3px 6px rgb(21, 21, 54);">
+    <img [src]="singleProduct.image" class="card-img-top" height="300px;" style="border: 1px solid rgb(21, 21, 54);" />
+    <div class="card-body">
+      <h4 class="card-title">{{ singleProduct.title | uppercase }}</h4>
+      <p class="card-text">
+        {{ singleProduct.overview }}
+      </p>
+      <p> <b>Price :</b> {{ singleProduct.price}}</p>
+      <a routerLink="cart" class="btn btn-outline-dark" (click)="addtoCart(singleProduct)">Add to cart</a> &nbsp;
+      <a [routerLink]="['product-details' , singleProduct.id]" class="btn btn-outline-dark">Show details</a>
+    </div>
+  </div>
+
+  

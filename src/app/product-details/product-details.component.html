@@ -1,0 +1,20 @@
+
+  <div class="card mb-3" style="max-width: 100%px; background-color: rgb(202, 204, 212);
+   border: 2px solid rgb(21, 21, 54); box-shadow: 3px 3px 6px rgb(21, 21, 54);">
+    <div class="row g-0">
+      <div class="col-md-2">
+        <img [src]="singleproduct.image" class="img-fluid rounded-start" alt="..." width="200px;" style="border: 1px solid rgb(21, 21, 54);">
+      </div>
+      <div class="col-md-10">
+        <div class="card-body">
+          <h4 class="card-title">{{singleproduct.title | uppercase }}</h4>
+          <p> <b>Price :</b> {{ singleproduct.price}}</p>
+          <p><b>Description :</b>{{ singleproduct.description}}</p>
+          <p><b>Category :</b>{{ singleproduct.category}}</p>
+
+          <a class="btn btn-outline-dark" (click)="addtoCart(singleproduct)"> <b>Add to cart</b></a> &nbsp;
+        </div>
+      </div>
+    </div>
+  </div>
+  

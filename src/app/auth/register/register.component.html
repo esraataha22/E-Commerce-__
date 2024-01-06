@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+<form [formGroup]="productForm" (ngSubmit)="handleSubmitForm()">
+    <div class="mb-3">
+        <label for="exampleInputEmail1"
+         class="form-label" 
+         >Name</label>
+      <input 
+      type="email" 
+      class="form-control" 
+      id="exampleInputEmail1" 
+      aria-describedby="emailHelp"
+      placeholder="Enter your name "
+      formControlName="name"
+      >
+      <div *ngIf="getProductFormControls['name'].touched && getProductFormControls['name'].invalid" id="nameHelp">
+        <small class="text-danger" *ngIf="getProductFormControls['name'].errors?.['required']">This field is required</small>
+     </div>
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input 
+      type="email" 
+      class="form-control" 
+      id="exampleInputEmail1" 
+      aria-describedby="emailHelp"
+      placeholder="Enter your email"
+      formControlName="email"
+      >
+      <div *ngIf="getProductFormControls['email'].touched && getProductFormControls['email'].invalid" id="emailHelp">
+        <small class="text-danger" *ngIf="getProductFormControls['email'].errors?.['required']">This field is required</small>
+        <small class="text-danger" *ngIf="getProductFormControls['email'].errors?.['pattern']">Enter a valid email address</small>
+     </div>
+    </div>
+    <label for="exampleInputEmail1" 
+    class="form-label" 
+    >Username</label>
+      <input 
+      type="text" 
+      class="form-control" 
+      id="exampleInputEmail1" 
+      aria-describedby="emailHelp"
+      placeholder="Enter your username"
+      formControlName="user"
+      pattern="(^\S+$)"
+      >
+      <div *ngIf="getProductFormControls['user'].touched && getProductFormControls['user'].invalid" id="userHelp">
+        <small class="text-danger" *ngIf="getProductFormControls['user'].errors?.['required']">This field is required</small>
+        <small class="text-danger" *ngIf="getProductFormControls['user'].errors?.['pattern']">Username cannot contain spaces</small>
+     </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" 
+      class="form-label" >Password</label>
+      <input 
+      type="password" 
+      class="form-control" 
+      id="exampleInputPassword1"
+      placeholder="Enter password "
+      formControlName="pass"
+      >
+      <div *ngIf="getProductFormControls['pass'].touched && getProductFormControls['pass'].invalid" id="passHelp">
+        <small class="text-danger" *ngIf="getProductFormControls['pass'].errors?.['required']">This field is required</small>
+        <small class="text-danger" *ngIf="getProductFormControls['pass'].errors?.['minlength']">Min.length 8 </small>
+        <small class="text-danger" *ngIf="getProductFormControls['pass'].errors?.['pattern']">Password must contain at least one
+            lowercase , one uppercase , at least one digit or special character</small>
+
+     </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" 
+        class="form-label">Confirm Password</label>
+        <input 
+        type="password" 
+        class="form-control" 
+        id="exampleInputPassword1"
+        placeholder="Confirm password "
+        formControlName="conpass"
+        >
+        <div *ngIf="getProductFormControls['pass'].touched && getProductFormControls['pass'].invalid" id="passHelp">
+            <small class="text-danger" *ngIf="getProductFormControls['pass'].errors?.['required']">This field is required</small>
+            <small class="text-danger" *ngIf="getProductFormControls['pass'].errors?.['minlength']">Min.length 8</small>
+         </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button> <br> <br>
+    <h5>Already have account! <a [routerLink]="['/login']" style="color:brown;">Login</a></h5>
+  </form>
+</div>
+</div>
